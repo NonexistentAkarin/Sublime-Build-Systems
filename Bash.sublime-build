@@ -1,0 +1,21 @@
+{
+	"cmd"		: ["bash", "$file"],
+	"selector"	: "source.shell",
+
+	"variants":
+	[
+		{
+			"name": "In Terminal",
+			"cmd": ["gnome-terminal", "-x", "bash", "-c", "bash '$file';read -n1 -p 'press any key to continue.'"]
+		}
+	],
+
+	"windows": {
+		"path"	: "$path;c:\\mingw\\bin;c:\\mingw\\msys\\1.0\\bin",
+		"cmd"	: ["bash", "--login", "-i", "-c", "cd \"$file_path\"; \"$file\""]
+	},
+
+	"osx": {
+		"path"	: "$PATH:/usr/local/bin:/usr/X11R6/bin:/opt/X11/bin:/usr/texbin"
+	}
+}
